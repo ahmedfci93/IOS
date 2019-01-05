@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    private var emoji = [Card : String]()
+    private var emojiChoices = "👻🤡😈🎃🌕🌹⛄️🍎"
     var numberOfPairsOfCards: Int{
         return (cardButtons.count + 1) / 2
     }
@@ -30,6 +32,32 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction private func NewGame(_ sender: Any) {
+        print("start")
+        let dialog = UIAlertController(title: "Confirm", message: "Are you Sure you want to start new game?", preferredStyle: .alert)
+        
+        let confirm = UIAlertAction(title: "ok", style: .default, handler: {(action) -> Void in
+            print("Start New Game")
+            self.StartGame()
+        })
+        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: {(action) -> Void in
+            print("Continue Game")
+        })
+        dialog.addAction(confirm)
+        dialog.addAction(cancel)
+        
+        self.present(dialog, animated: true, completion: nil)
+        
+        
+        
+    }
+    private func StartGame(){
+        flipCount = 0
+        emoji = [Card : String]()
+        emojiChoices = "👻🤡😈🎃🌕🌹⛄️🍎"
+        game.Start()
+        updateViewFromModel()
+    }
     private func updateFlipsCount (){
         let attributes: [NSAttributedStringKey: Any] = [
             .strokeWidth : 5.0,
@@ -63,9 +91,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    private var emoji = [Card : String]()
-    //    private var emojiChoices = ["👻","🤡","😈","🎃","🌕","🌹","⛄️","🍎"]
-    private var emojiChoices = "👻🤡😈🎃🌕🌹⛄️🍎"
     private func emoji(for card:Card) -> String {
         if emoji[card] == nil {
             let randomIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)

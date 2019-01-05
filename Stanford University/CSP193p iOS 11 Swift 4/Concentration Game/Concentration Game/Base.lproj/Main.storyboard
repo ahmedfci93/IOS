@@ -173,20 +173,40 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dg-h8-GX2">
-                                <rect key="frame" x="125.33333333333331" y="730" width="123.66666666666669" height="48"/>
+                                <rect key="frame" x="125.66666666666666" y="730" width="123.66666666666666" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-7g-YRY">
+                                <rect key="frame" x="16" y="730" width="70" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="uV3-Y1-ZQN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="New">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="NewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wEN-Wo-5wr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="QZ7-7g-YRY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uT9-M1-4rX" secondAttribute="bottom" id="0mp-7Z-xp1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bYr-8K-hXT" secondAttribute="trailing" constant="16" id="2K1-03-MdI"/>
+                            <constraint firstItem="1dg-h8-GX2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QZ7-7g-YRY" secondAttribute="trailing" id="GXL-wL-u0c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1dg-h8-GX2" secondAttribute="bottom" id="Kmv-tL-fVR"/>
+                            <constraint firstItem="QZ7-7g-YRY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WrA-5Z-2vH"/>
                             <constraint firstItem="bYr-8K-hXT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fSW-Qk-Yvh"/>
                             <constraint firstItem="1dg-h8-GX2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="la5-xs-5WE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QZ7-7g-YRY" secondAttribute="bottom" id="ncM-Ux-OaZ"/>
                             <constraint firstItem="bYr-8K-hXT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pFw-Ok-Ojb"/>
                             <constraint firstItem="1dg-h8-GX2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bYr-8K-hXT" secondAttribute="bottom" constant="8" symbolic="YES" id="w5V-Nv-Dvf"/>
+                            <constraint firstItem="bYr-8K-hXT" firstAttribute="leading" secondItem="QZ7-7g-YRY" secondAttribute="trailing" constant="-70" id="xx2-bz-guU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
